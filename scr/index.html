@@ -69,6 +69,7 @@
                 name: '中国',
                 type: 'map',
                 mapType: 'china',
+                
                 label: {
                     normal: {
                         show: true,//显示省份标签
@@ -84,6 +85,14 @@
                         borderWidth: .15,//区域边框宽度
                         // borderColor: '#009fe8',//区域边框颜色
                         // areaColor:"#ffefd5",//区域颜色
+                        color:function(params){                        
+                			if(params.value >0 && params.value <100){                            
+                				return "#FE8463";                        
+                			}else if(params.value >=100 && params.value<=300 ){
+                				return "#27727B";                        
+                			}                        
+                			return "#9BCA63";                    
+                		}
                     },
                     emphasis: {
                         borderWidth: .5,
@@ -91,6 +100,8 @@
                         areaColor: "#ffdead",
                     }
                 },
+
+                
                 
                 data: dataMap
             }
